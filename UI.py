@@ -3,6 +3,9 @@ __author__ = 'dragosmc'
 import wx
 import hdd
 
+title = "HDD Controller"
+list_button_label = "List devices"
+clear_button_label = "Clear"
 
 def button_pressed(event):
     devices = hdd.get_devices()
@@ -19,10 +22,10 @@ panel = wx.Panel(window)
 mainBox = wx.BoxSizer(wx.VERTICAL)
 topBox = wx.BoxSizer()
 
-listDevicesButton = wx.Button(panel, label="List devices")
+listDevicesButton = wx.Button(panel, label=list_button_label)
 listDevicesButton.Bind(wx.EVT_BUTTON, button_pressed)
 
-deleteDevicesButton = wx.Button(panel, label="Clear")
+deleteDevicesButton = wx.Button(panel, label=clear_button_label)
 deleteDevicesButton.Bind(wx.EVT_BUTTON, clear_pressed)
 
 deviceList = wx.TextCtrl(panel, style=wx.TE_MULTILINE | wx.VSCROLL)
