@@ -16,7 +16,7 @@ def clear_pressed(event):
     deviceList.Clear()
 
 app = wx.App()
-window = wx.Frame(None, title="HDD Controller", size=(800, 600), style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
+window = wx.Frame(None, title=title, size=(800, 600), style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
 panel = wx.Panel(window)
 
 mainBox = wx.BoxSizer(wx.VERTICAL)
