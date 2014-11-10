@@ -43,6 +43,7 @@ class StartUpPanel(wx.Panel):
         # - contains the buttons and the sizer which layouts them
         buttons_panel = wx.Panel(self, size=(320, 140))
         buttons_panel.SetBackgroundColour(wx.BLUE)
+        buttons_panel.SetMinSize((320,140))
         start_button = wx.Button(buttons_panel, name="btn_start", label="Start")
         start_button.SetSize((100,100))
         stop_button = wx.Button(buttons_panel, name="btn_stop", label="Stop")
