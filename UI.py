@@ -51,7 +51,7 @@ class StartUpPanel(wx.Panel):
 
         # Switch pane button's (control) panel
         control_panel = wx.Panel(self, size=(320, 50))
-        control_panel.SetBackgroundColour(wx.YELLOW)
+        control_panel.SetBackgroundColour(wx.GREEN)
 
         # Main sizer
         # - layout as per logbook
@@ -99,6 +99,6 @@ mp = StartUpPanel(frame, size=(320,240))
 
 wx.lib.inspection.InspectionTool().Show()
 frame.Show()
-#frame.ShowFullScreen(True)
+frame.ShowFullScreen(True)
 #wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
