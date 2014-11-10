@@ -67,6 +67,7 @@ class StartUpPanel(wx.Panel):
         sizer.Add(control_panel,1,wx.ALL)
         self.SetSizer(sizer)
         sizer.Fit(self)
+        sizer.SetMinSize((320,240))
 
 def button_pressed(event):
     devices = hdd.get_devices()
