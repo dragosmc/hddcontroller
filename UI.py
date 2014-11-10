@@ -14,39 +14,52 @@ class StartUpPanel(wx.Panel):
 
         super(StartUpPanel, self).__init__(*args, **kwargs)
 
-        panel = wx.Panel(self, size=(320, 120))
-        panel.SetBackgroundColour(wx.RED)
-        anotherpanel = wx.Panel(self, size=(320, 120))
-        anotherpanel.SetBackgroundColour(wx.BLUE)
+        # Temp panel
+        # - contains the "Temperature" text and placeholder for value
+        temperature_panel = wx.Panel(self, size=(320, 50))
+        temperature_panel.SetBackgroundColour(wx.RED)
+
+        text = wx.StaticText(temperature_panel, name="temp_label", label="Temperature:")
+        font =  wx.Font(14, wx.MODERN, wx.NORMAL, wx.NORMAL)
+        text.SetFont(font)
+        text.SetForegroundColour((0,0,0))
+
+        self.temp = wx.TextCtrl(temperature_panel, name="temp_value_label", style=wx.TE_READONLY | wx.BORDER_NONE)
+        self.temp.SetValue("14")
+        self.temp.SetEditable(False)
+        self.temp.SetForegroundColour((255,255,0))
+        self.temp.SetBackgroundColour(wx.RED)
+
+        temp_font =  wx.Font(16, wx.MODERN, wx.NORMAL, wx.NORMAL)
+        self.temp.SetFont(temp_font)
+
+        temperature_szr = wx.BoxSizer(wx.HORIZONTAL)
+        temperature_szr.AddF(text, wx.SizerFlags().Centre())
+        temperature_szr.AddF(self.temp, wx.SizerFlags().Centre())
+        temperature_panel.SetSizer(temperature_szr)
+
+
+        # Buttons panel
+        # - contains the buttons and the sizer which layouts them
+        buttons_panel = wx.Panel(self, size=(320, 140))
+        buttons_panel.SetBackgroundColour(wx.BLUE)
+        start_button = wx.Button(buttons_panel, name="btn_start", label="Start")
+        stop_button = wx.Button(buttons_panel, name="btn_stop", label="Stop")
+        buttons_panel_szr = wx.BoxSizer(wx.HORIZONTAL)
+        buttons_panel_szr.AddMany({stop_button, start_button})
+        buttons_panel.SetSizer(buttons_panel_szr)
+
+        # Switch pane button's (control) panel
+        control_panel = wx.Panel(self, size=(320, 50))
+        control_panel.SetBackgroundColour(wx.YELLOW)
+
+        # Main sizer
+        # - layout as per logbook
         sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.Add(panel)
-        sizer.Add(anotherpanel)
+        sizer.Add(temperature_panel)
+        sizer.Add(buttons_panel)
+        sizer.Add(control_panel)
         self.SetSizer(sizer)
-        # start_button = wx.Button(panel, label="Start")
-        # stop_button = wx.Button(panel, label="Stop")
-
-         # self.next_panel_button = wx.Button(self, label="->")
-        # self.temperature_text = wx.StaticText(self, label="Temperature")
-
-
-        # text_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        # text_sizer.Add(self.temperature_text, border=5)
-        #
-        # button_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        # button_sizer.Add(self.start_button, border=5)
-        # button_sizer.Add(self.stop_button, border=5)
-        #
-        # next_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        # next_sizer.Add(self.next_panel_button, border=5)
-        #
-        # main_sizer = wx.BoxSizer(wx.VERTICAL)
-        # main_sizer.AddF(text_sizer,  wx.SizerFlags(1).Bottom().Right())
-        # main_sizer.AddF(button_sizer, wx.SizerFlags(10).Bottom().Center().Expand())
-        # main_sizer.AddF(next_sizer, wx.SizerFlags(1).Bottom().Right())
-        # self.SetSizer(main_sizer)
-        # self.SetAutoLayout(True)
-        # main_sizer.Fit(self)
-
 
 def button_pressed(event):
     devices = hdd.get_devices()
@@ -86,6 +99,6 @@ mp = StartUpPanel(frame, size=(320,240))
 
 wx.lib.inspection.InspectionTool().Show()
 frame.Show()
-frame.ShowFullScreen(True)
-wx.CallLater(10000, frame.ShowFullScreen, False)
+#frame.ShowFullScreen(True)
+#wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
