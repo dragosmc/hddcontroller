@@ -72,9 +72,9 @@ def clear_pressed(event):
 
 
 app = wx.App()
-frame = wx.Frame(None, size=(320,240), title=title)
+frame = wx.Frame(None,title=title)
 #frame.SetClientSize((320,240))
-mp = StartUpPanel(frame, size=(320,240))
+mp = StartUpPanel(frame)
 # panel = wx.Panel(window)
 #
 # mainBox = wx.BoxSizer(wx.VERTICAL)
@@ -98,7 +98,9 @@ mp = StartUpPanel(frame, size=(320,240))
 # panel.SetSizer(mainBox)
 
 #wx.lib.inspection.InspectionTool().Show()
+frame.SetClientSize((320, 240))
 frame.Show()
+
 #frame.ShowFullScreen(True)
 #wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
