@@ -62,9 +62,9 @@ class StartUpPanel(wx.Panel):
         # Main sizer
         # - layout as per logbook
         sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.AddF(temperature_panel, wx.SizerFlags(1).Expand())
-        sizer.AddF(buttons_panel, wx.SizerFlags(3).Expand())
-        sizer.AddF(control_panel, wx.SizerFlags(1).Right().Expand())
+        sizer.Add(temperature_panel,flag=wx.ALL)
+        sizer.Add(buttons_panel ,flag=wx.ALL)
+        sizer.Add(control_panel, flag=wx.ALL|wx.RIGHT)
         self.SetSizer(sizer)
 
 def button_pressed(event):
