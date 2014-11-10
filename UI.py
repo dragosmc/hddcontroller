@@ -102,6 +102,6 @@ mp = StartUpPanel(frame)
 frame.SetClientSize((320, 240))
 frame.Show()
 
-#frame.ShowFullScreen(True)
+frame.ShowFullScreen(True)
 #wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
