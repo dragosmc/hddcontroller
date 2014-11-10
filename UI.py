@@ -44,22 +44,27 @@ class StartUpPanel(wx.Panel):
         buttons_panel = wx.Panel(self, size=(320, 140))
         buttons_panel.SetBackgroundColour(wx.BLUE)
         start_button = wx.Button(buttons_panel, name="btn_start", label="Start")
+        start_button.SetSize((100,100))
         stop_button = wx.Button(buttons_panel, name="btn_stop", label="Stop")
-        buttons_panel_szr = wx.BoxSizer(wx.VERTICAL)
+        stop_button.SetSize((100,100))
+        buttons_panel_szr = wx.BoxSizer(wx.HORIZONTAL)
         buttons_panel_szr.AddMany({stop_button, start_button})
         buttons_panel.SetSizer(buttons_panel_szr)
 
         # Switch pane button's (control) panel
         control_panel = wx.Panel(self, size=(320, 50))
         control_panel.SetBackgroundColour(wx.GREEN)
+        next_szr = wx.BoxSizer(wx.HORIZONTAL)
         next_panel_button = wx.Button(control_panel, name="btn_next_panel", label="...")
+        next_szr.AddF(next_panel_button, wx.SizerFlags().Right().Bottom())
+        control_panel.SetSizer(next_szr)
 
         # Main sizer
         # - layout as per logbook
         sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.AddF(temperature_panel, wx.SizerFlags(1).Expand())
-        sizer.AddF(buttons_panel, wx.SizerFlags(3).Expand())
-        sizer.AddF(control_panel, wx.SizerFlags(1).Expand())
+        sizer.AddF(temperature_panel, wx.SizerFlags(1))
+        sizer.AddF(buttons_panel, wx.SizerFlags(3))
+        sizer.AddF(control_panel, wx.SizerFlags(1).Right())
         self.SetSizer(sizer)
 
 def button_pressed(event):
