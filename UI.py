@@ -50,7 +50,7 @@ class StartUpPanel(wx.Panel):
         stop_button = wx.Button(buttons_panel, name="btn_stop", label="Stop")
         stop_button.SetSize((100,100))
         buttons_panel_szr = wx.BoxSizer(wx.HORIZONTAL)
-        buttons_panel_szr.AddMany({(stop_button, wx.ALL|wx.CENTER), (start_button, wx.ALL|wx.CENTER)})
+        buttons_panel_szr.AddMany({(stop_button, 1,wx.ALL|wx.CENTER|wx.EXPAND, 5), (start_button,1, wx.ALL|wx.CENTER|wx.EXPAND, 5)})
         buttons_panel.SetSizer(buttons_panel_szr)
 
         # Switch pane button's (control) panel
