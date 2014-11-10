@@ -16,7 +16,7 @@ class StartUpPanel(wx.Panel):
 
         panel = wx.Panel(self, size=(320, 120))
         panel.SetBackgroundColour(wx.RED)
-        anotherpanel = wx.Panel(self, size=(320, 100))
+        anotherpanel = wx.Panel(self, size=(320, 120))
         anotherpanel.SetBackgroundColour(wx.BLUE)
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(panel)
