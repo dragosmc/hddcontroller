@@ -17,6 +17,7 @@ class StartUpPanel(wx.Panel):
         # Temp panel
         # - contains the "Temperature" text and placeholder for value
         temperature_panel = wx.Panel(self, size=(320, 50))
+        temperature_panel.SetMinSize((320,50))
         temperature_panel.SetBackgroundColour(wx.RED)
 
         text = wx.StaticText(temperature_panel, name="temp_label", label="Temperature:")
@@ -54,6 +55,7 @@ class StartUpPanel(wx.Panel):
 
         # Switch pane button's (control) panel
         control_panel = wx.Panel(self, size=(320, 50))
+        control_panel.SetMinSize((320,50))
         control_panel.SetBackgroundColour(wx.GREEN)
         next_szr = wx.BoxSizer(wx.HORIZONTAL)
         next_panel_button = wx.Button(control_panel, name="btn_next_panel", label="...")
@@ -111,6 +113,6 @@ frame.SetClientSize((320, 240))
 frame.Show()
 frame.Layout()
 
-#frame.ShowFullScreen(True)
+frame.ShowFullScreen(True)
 #wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
