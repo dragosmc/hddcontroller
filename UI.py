@@ -45,7 +45,7 @@ class StartUpPanel(wx.Panel):
         buttons_panel.SetBackgroundColour(wx.BLUE)
         start_button = wx.Button(buttons_panel, name="btn_start", label="Start")
         stop_button = wx.Button(buttons_panel, name="btn_stop", label="Stop")
-        buttons_panel_szr = wx.BoxSizer(wx.HORIZONTAL)
+        buttons_panel_szr = wx.BoxSizer(wx.VERTICAL)
         buttons_panel_szr.AddMany({stop_button, start_button})
         buttons_panel.SetSizer(buttons_panel_szr)
 
@@ -101,6 +101,6 @@ mp = StartUpPanel(frame)
 frame.SetClientSize((320, 240))
 frame.Show()
 
-#frame.ShowFullScreen(True)
+frame.ShowFullScreen(True)
 #wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
