@@ -97,8 +97,8 @@ mp = StartUpPanel(frame, size=(320,240))
 #
 # panel.SetSizer(mainBox)
 
-wx.lib.inspection.InspectionTool().Show()
+#wx.lib.inspection.InspectionTool().Show()
 frame.Show()
-frame.ShowFullScreen(True)
+#frame.ShowFullScreen(True)
 #wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
