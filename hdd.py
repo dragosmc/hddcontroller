@@ -10,3 +10,4 @@ import usb.backend
 def get_devices():
     dev_list = usb.core.find(find_all=True)
     return dev_list
+
