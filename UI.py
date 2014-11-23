@@ -7,6 +7,7 @@ import wx.lib.inspection
 title = "HDD Controller"
 list_button_label = "List devices"
 clear_button_label = "Clear"
+man_color = wx.Colour(184,54,210)
 
 
 class StartUpPanel(wx.Panel):
@@ -18,7 +19,7 @@ class StartUpPanel(wx.Panel):
         # - contains the "Temperature" text and placeholder for value
         temperature_panel = wx.Panel(self, size=(320, 50))
         temperature_panel.SetMinSize((320,50))
-        temperature_panel.SetBackgroundColour(wx.RED)
+        temperature_panel.SetBackgroundColour(man_color)
 
         text = wx.StaticText(temperature_panel, name="temp_label", label="Temperature:")
         font =  wx.Font(14, wx.MODERN, wx.NORMAL, wx.NORMAL)
@@ -29,7 +30,7 @@ class StartUpPanel(wx.Panel):
         self.temp.SetValue("14")
         self.temp.SetEditable(False)
         self.temp.SetForegroundColour((255,255,0))
-        self.temp.SetBackgroundColour(wx.RED)
+        self.temp.SetBackgroundColour(man_color)
 
         temp_font =  wx.Font(16, wx.MODERN, wx.NORMAL, wx.NORMAL)
         self.temp.SetFont(temp_font)
@@ -43,7 +44,7 @@ class StartUpPanel(wx.Panel):
         # Buttons panel
         # - contains the buttons and the sizer which layouts them
         buttons_panel = wx.Panel(self, size=(320, 140))
-        buttons_panel.SetBackgroundColour(wx.BLUE)
+        buttons_panel.SetBackgroundColour(man_color)
         buttons_panel.SetMinSize((320,140))
         start_button = wx.Button(buttons_panel, name="btn_start", label="Start")
         start_button.SetSize((100,100))
@@ -56,7 +57,7 @@ class StartUpPanel(wx.Panel):
         # Switch pane button's (control) panel
         control_panel = wx.Panel(self, size=(320, 50))
         control_panel.SetMinSize((320,50))
-        control_panel.SetBackgroundColour(wx.GREEN)
+        control_panel.SetBackgroundColour(man_color)
         next_szr = wx.BoxSizer(wx.HORIZONTAL)
         next_panel_button = wx.Button(control_panel, name="btn_next_panel", label="...")
         next_szr.AddF(next_panel_button, wx.SizerFlags().Right().Bottom())
