@@ -115,5 +115,6 @@ frame.Show()
 frame.Layout()
 
 frame.ShowFullScreen(True)
+
 #wx.CallLater(10000, frame.ShowFullScreen, False)
 app.MainLoop()
