@@ -27,7 +27,7 @@ class StartUpPanel(wx.Panel):
         text.SetForegroundColour((0,0,0))
 
         self.temp = wx.TextCtrl(temperature_panel, name="temp_value_label", style=wx.TE_READONLY | wx.BORDER_NONE)
-        self.temp.SetValue("14")
+        self.temp.SetValue("38")
         self.temp.SetEditable(False)
         self.temp.SetForegroundColour((255,255,0))
         self.temp.SetBackgroundColour(man_color)
