@@ -7,7 +7,7 @@ import wx.lib.inspection
 title = "HDD Controller"
 list_button_label = "List devices"
 clear_button_label = "Clear"
-man_color = wx.Colour(184,54,210)
+man_color = wx.Colour(138,16,163)
 
 
 class StartUpPanel(wx.Panel):
